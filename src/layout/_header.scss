@@ -8,7 +8,10 @@ header{
     }
 
     .top-menu{
-        
+        display: none;
+        @include tablet{
+            display: flex;
+        }      
         margin: 0;
         padding: 0;
             li{
@@ -16,10 +19,9 @@ header{
                 a{
                     display: block;
                     padding: .5rem 1rem;
-                    text-decoration: none;
                     color: $dark;
-                    font-size: 1.1rem;
-                    font-weight: bold;
+                    font-size: 1.4rem;
+                    font-weight: medium;
                 }
             }
     }

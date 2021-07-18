@@ -2,17 +2,10 @@ html{
     font-size: 62.5%;
     box-sizing: border-box;
 }
-*,*:before,*:after{
-    box-sizing: inherit;
-}
 
 body{
     font-family: $fuentePrincipal;
     font-size: 1.6rem;
-
-    &.fijar-body{
-        overflow: hidden;
-    }
 }
 
 p{
@@ -23,9 +16,7 @@ p{
 a{
     text-decoration: none;
 }
-img{
-    max-width: 100%;
-}
+
 h1,h2,h3{
     margin: 0;
 }
