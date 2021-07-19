@@ -1,0 +1,17 @@
+#hero{
+    height: 40rem;
+    width: 100%;
+    background-color: whitesmoke;
+    background-image: url('../dist/img/hero.jpg');
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+        @include desktop{
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 60rem;
+        }
+    
+    
+}

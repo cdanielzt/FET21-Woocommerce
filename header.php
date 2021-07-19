@@ -11,14 +11,18 @@
 <body <?php body_class('test') ?> >
     
 <header>
-    <div class="container d-flex justify-content-between ">
-        <img src="<?php bloginfo('template_directory')?>/dist/img/logo-woocommerce.svg" class="img-fluid logo" alt="Logo del sitio">
+    <div class="container d-flex alig-items-center justify-content-between p-0">
 
-        <?php 
-        wp_nav_menu( array(
-            'theme_location' => 'top-menu',
-            'menu_class' => 'top-menu'
-        )
-        );?>
+
+                <img src="<?php bloginfo('template_directory')?>/dist/img/logo-fet21.png" class="img-fluid logo" alt="Logo del sitio">
+
+
+                <?php 
+                wp_nav_menu( array(
+                    'theme_location' => 'top-menu',
+                    'menu_class' => 'top-menu'
+                )
+                );?>
+
     </div>
 </header>
