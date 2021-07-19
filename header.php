@@ -23,6 +23,7 @@
                     'menu_class' => 'top-menu'
                 )
                 );?>
+                <button type="button" class="btn btn-warning">Comprar boletos</button>
 
     </div>
 </header>

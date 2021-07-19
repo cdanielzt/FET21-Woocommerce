@@ -1,15 +1,19 @@
 #hero{
-    height: 40rem;
+    height: 35rem;
     width: 100%;
+    min-width: 320px;
     background-color: whitesmoke;
     background-image: url('../dist/img/hero.jpg');
     background-size: contain;
     background-position: center top;
     background-repeat: no-repeat;
+
+        @include tablet{
+            height: 55rem;
+            background-size: cover;
+        }
         @include desktop{
-        background-position: center top;
         background-size: cover;
-        background-repeat: no-repeat;
         height: 60rem;
         }
     

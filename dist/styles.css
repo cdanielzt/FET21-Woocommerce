@@ -10895,8 +10895,10 @@ body {
 }
 
 p {
-  font-size: 2rem;
-  color: #000;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #18191F;
+  line-height: 32px;
 }
 
 a {
@@ -10916,7 +10918,10 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 3rem;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 54px;
 }
 
 header {
@@ -10950,23 +10955,38 @@ header .top-menu li a {
 }
 
 #hero {
-  height: 40rem;
+  height: 35rem;
   width: 100%;
+  min-width: 320px;
   background-color: whitesmoke;
   background-image: url("../dist/img/hero.jpg");
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
 }
+@media (min-width: 768px) {
+  #hero {
+    height: 55rem;
+    background-size: cover;
+  }
+}
 @media (min-width: 1200px) {
   #hero {
-    background-position: center top;
     background-size: cover;
-    background-repeat: no-repeat;
     height: 60rem;
   }
 }
 
 .main-container {
   padding: 2rem 0;
+}
+
+footer {
+  height: 20rem;
+  background-color: #000;
+}
+
+.content {
+  height: auto;
+  padding: 5rem 0;
 }

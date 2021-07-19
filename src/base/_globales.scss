@@ -9,8 +9,10 @@ body{
 }
 
 p{
-    font-size: 2rem;
-    color: $negro;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $textGray;
+    line-height: 32px;
 }
 
 a{
@@ -28,5 +30,8 @@ h2{
     font-size: 3.6rem;
 }
 h3{
-    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 54px;
 }
