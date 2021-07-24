@@ -46,3 +46,10 @@ register_sidebar( array(
     'before_title' => '<h4>',
     'after_title' => '</h4>'
 ));
+
+//Add woocommerce Support
+function mytheme_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );

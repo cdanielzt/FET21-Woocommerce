@@ -1,8 +1,5 @@
 <?php get_header() ?>
 
-
-
-
 <section class="content">
 
 <div class="container">
@@ -31,8 +28,6 @@
         </div>
 
     </div>
-
-   
 
 </div>
 
