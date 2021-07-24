@@ -38,3 +38,11 @@ register_nav_menus( array(
 //Add image sizes
 add_image_size( 'post_image', 1100, 550, false);
 
+//Add a widget
+register_sidebar( array(
+    'name' => 'Sidebar de página',
+    'id' => 'page-sidebar',
+    'class' => '',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>'
+));
