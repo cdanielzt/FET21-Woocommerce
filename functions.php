@@ -1,5 +1,5 @@
 <?php
-
+//Load Styles
 function load_stylesheets(){
     wp_register_style( 'stylesheet', get_template_directory_uri() . '/style.css', '', 1, 'all');
     wp_enqueue_style( 'stylesheet');
@@ -10,6 +10,7 @@ function load_stylesheets(){
 
 add_action( 'wp_enqueue_scripts', 'load_stylesheets');
 
+//Load JS
 function load_javascript(){
     wp_register_script( 'custom', get_template_directory_uri() . '/dist/app.js', 'jquery', 1, true );
     wp_enqueue_script('custom');
@@ -26,9 +27,14 @@ function wpb_add_google_fonts() {
     add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
     
 
-//Add Menus
+//Add support
 add_theme_support( 'menus' );
+add_theme_support( 'post-thumbnails');
 
 register_nav_menus( array(
     'top-menu' => 'Top Menu'
 ) );
+
+//Add image sizes
+add_image_size( 'post_image', 1100, 550, false);
+
