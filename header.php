@@ -11,11 +11,12 @@
 <body <?php body_class('test') ?> >
     
 <header>
-    <div class="container d-flex alig-items-center justify-content-between p-0">
-
-
-                <img src="<?php bloginfo('template_directory')?>/dist/img/logo-fet21.png" class="img-fluid logo" alt="Logo del sitio">
-
+    <div class="container ">
+        <div class="row">
+            <div class="col d-flex alig-items-center justify-content-between">
+                <a href="<?php bloginfo('url');?>">
+                    <img src="<?php bloginfo('template_directory')?>/dist/img/logo-fet21.png" class="img-fluid logo" alt="Logo del sitio">
+                </a>
 
                 <?php 
                 wp_nav_menu( array(
@@ -24,6 +25,7 @@
                 )
                 );?>
                 <button type="button" class="btn btn-warning">Comprar boletos</button>
-
+            </div>
+        </div>
     </div>
 </header>
