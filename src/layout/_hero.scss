@@ -3,9 +3,10 @@
     width: 100%;
     height: 850px;
     position: inherit;
+    background-image: url('../dist/img/fondo.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center center;
 }
 
 .slider-text{
@@ -88,4 +89,10 @@
         width: 100%;
         display: block !important;
     }
+}
+
+.features{
+    height: 27rem;
+    padding: 7em;
+    background-color: #1162fb;
 }

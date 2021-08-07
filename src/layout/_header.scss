@@ -8,13 +8,13 @@ position: relative;
         width: 100%;
         z-index: 99;
         background-color: transparent;
-        margin-top: 3rem;
+        padding-top: 3rem;
     }
 }
 
 
 .nav-link{
-    color: #444 !important;
+    color: black !important;
     font-size: 1.6rem;
     transition: 0.15s;
     &:hover{
@@ -31,8 +31,9 @@ position: relative;
 }
 
 .navbar-scroll{
+    padding-top: 1rem !important;
     background-color: white !important;
-    padding: 0.8rem 0;
+    padding: 1.2rem 0;
     position: fixed !important;
     top: 0;
     z-index: 99;

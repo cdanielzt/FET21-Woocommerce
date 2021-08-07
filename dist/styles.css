@@ -10937,11 +10937,11 @@ header .header-inner {
   width: 100%;
   z-index: 99;
   background-color: transparent;
-  margin-top: 3rem;
+  padding-top: 3rem;
 }
 
 .nav-link {
-  color: #444 !important;
+  color: black !important;
   font-size: 1.6rem;
   transition: 0.15s;
 }
@@ -10958,8 +10958,9 @@ header .header-inner {
 }
 
 .navbar-scroll {
+  padding-top: 1rem !important;
   background-color: white !important;
-  padding: 0.8rem 0;
+  padding: 1.2rem 0;
   position: fixed !important;
   top: 0;
   z-index: 99;
@@ -10975,9 +10976,10 @@ header .header-inner {
   width: 100%;
   height: 850px;
   position: inherit;
+  background-image: url("../dist/img/fondo.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
 }
 
 .slider-text {
@@ -11049,6 +11051,12 @@ header .header-inner {
   display: block !important;
 }
 
+.features {
+  height: 27rem;
+  padding: 7em;
+  background-color: #1162fb;
+}
+
 footer {
   height: 20rem;
   background-color: #000;
@@ -11057,4 +11065,89 @@ footer {
 .content {
   height: auto;
   padding: 5rem 0;
+}
+
+.fet-agenda {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.fet-agenda .nav-pills {
+  width: 100%;
+  display: block;
+}
+.fet-agenda .nav-pills .nav-link {
+  text-align: end;
+  padding: 35px 30px !important;
+  border-radius: 0;
+  margin-bottom: 0;
+  color: #fff !important;
+  font-size: 20px !important;
+  font-weight: 700;
+  position: relative;
+  display: inline-block !important;
+  border: 1px solid transparent;
+  background: #1162fb;
+  width: 100%;
+  margin-bottom: 10px;
+  box-shadow: 0 7px 15px -5px rgba(0, 0, 0, 0.07);
+  border-radius: 0;
+}
+.fet-agenda .nav-pills .nav-link span {
+  display: block;
+  font-size: 24px;
+  font-weight: 200;
+}
+.fet-agenda .tab-content {
+  border-radius: 0;
+}
+.fet-agenda .tab-content .speaker-wrap {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.fet-agenda .tab-content .speaker-wrap .speaker-img {
+  width: 180px;
+  height: 250px;
+  padding-left: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.fet-agenda .tab-content .speaker-wrap .text {
+  width: calc(100% - 180px);
+  padding-left: 40px;
+}
+.fet-agenda .tab-content .speaker-wrap .text h2, .fet-agenda .tab-content .speaker-wrap .text .h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.fet-agenda .tab-content .speaker-wrap .text .time {
+  font-weight: 600;
+  color: #1162fb;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+}
+.fet-agenda .tab-content .speaker-wrap .text .location {
+  font-size: 18px;
+  font-weight: 300;
+  color: #000000;
+}
+.fet-agenda .tab-content .speaker-wrap .text .speaker-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+.fet-agenda .tab-content > .tab-pane {
+  display: none;
+}
+.fet-agenda .tab-content > .active {
+  display: block;
+}
+
+.flex-column {
+  flex-direction: column !important;
 }

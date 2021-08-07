@@ -1,13 +1,15 @@
 <?php get_header() ?>
 
-<div class="hero-wrap" style="background-image:url('../dist/img/hero.jpg')" data-stellar-background-ratio="0.5">
+<div class="hero-wrap" style="" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
             <div class="col-lg-6 col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                 <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-                    <br><span>Foro Emprendedor Tapachula 2021</span></h1>
+                    <br><span>4° Foro Emprendedor Tapachula 2021</span>
+                </h1>
                 <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
-                        class="icon-calendar mr-2"></span>4 y 5 de Noviembre de 2021 - Teatro de la Ciudad Tapachula, Chiapas</p>
+                        class="icon-calendar mr-2"></span>4 y 5 de Noviembre de 2021 - Teatro de la Ciudad Tapachula,
+                    Chiapas</p>
                 <div id="timer" class="d-flex">
                     <div class="time" id="dias"></div>
                     <div class="time pl-3" id="horas"></div>
@@ -30,7 +32,8 @@
                     </div>
                     <div class="form-group">
                         <div class="checkbox mb-4">
-                            <label><input type="checkbox" value="" class="mr-3"> He leido y acepto los términos y condiciones.</label>
+                            <label><input type="checkbox" value="" class="mr-3"> He leido y acepto los términos y
+                                condiciones.</label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -44,11 +47,22 @@
 
 </div>
 
+<section>
+    <div class="features">
+
+    </div>
+</section>
 
 
 <section class="content">
     <div class="container">
+
+        <div class="col col-xl-5">
+            <?php the_post_thumbnail(); ?>
+        </div>
+
         <div class="col col-xl-7">
+
             <?php if(have_posts()) : while(have_posts()) : the_post();?>
 
             <?php the_content(); ?>
@@ -56,34 +70,81 @@
             <?php endwhile; else: endif;?>
         </div>
 
-        <div class="col col-xl-5">
-            <?php the_post_thumbnail(); ?>
-        </div>
+
 
     </div>
 
 </section>
 
-<section class="container mb-5">
-    <h3>Agenda del evento</h3>
-    <div class="row">
-        <div class="col-xl-2 d-flex flex-column">
-            <a href="" class="btn btn-light p-4">4 de Noviembre</a>
-            <a href="" class="btn btn-light p-4">5 de Noviembre</a>
-        </div>
+<section class="bg-light">
 
-        <div class="col-xl-10">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Conferencia</h5>
-                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit quibusdam
-                        suscipit totam dolore numquam qui, culpa explicabo nobis quia aliquid ab ea eveniet
-                        exercitationem architecto commodi quam ducimus atque assumenda!</p>
-                </div>
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+
+            <div class="col-md-7 text-center">
+                <h3 class="mb-3 pt-3">Agenda del evento</h3>
             </div>
         </div>
-    </div>
 
+
+
+        <div class="fet-agenda">
+            <div class="row">
+                <div class="col-md-3 nav-link-wrap text-center text-md-right">
+                    <div class="nav flex-column nav-pills">
+                        <a class="nav-link ftco-animate active fadeInUp ftco-animated" id="v-pills-1-tab"
+                            data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1"
+                            aria-selected="true">Primer día <span>4
+                                de noviembre</span></a>
+                        <a class="nav-link ftco-animate active fadeInUp ftco-animated" id="v-pills-1-tab"
+                            data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1"
+                            aria-selected="true">Segundo día <span>5
+                                de noviembre</span></a>
+                    </div><!-- nav -->
+
+                </div><!-- col-md-3 -->
+
+
+
+                <div class="col-md-9 tab-wrap">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel"
+                            aria-labelledby="day-1-tab">
+                            <div class="speaker-wrap ftco-animate d-md-flex">
+                                <div class="img speaker-img"
+                                    style="background-image: url('<?php bloginfo('template_directory')?>/dist/img/ponentes/Carlos-Ozuna.jpeg')">
+                                </div>
+                                <div class="text">
+                                    <h2><a href="#">Introduction to Business Leaders</a></h2>
+                                    <p>A small river named Duden flows by their place and supplies it with the necessary
+                                        regelialia. It is a paradisematic country, in which roasted parts of sentences
+                                        fly
+                                        into
+                                        your mouth.</p>
+                                    <span class="time">09:00 am - 4:30 pm</span>
+                                    <p class="location"><span class="icon-map-o mr-2"></span>20 July 2019 - Hall,
+                                        Building
+                                        Los
+                                        Angeles CA</p>
+                                    <p>A small river named Duden flows by their place and supplies it with the necessary
+                                        regelialia. It is a paradisematic country, in which roasted parts of sentences
+                                        fly
+                                        into
+                                        your mouth.</p>
+                                    <h3 class="speaker-name">&mdash; <a href="#">Ryan Thompson</a> <span
+                                            class="position">Founder of Wordpress</span></h3>
+
+                                </div><!-- text -->
+                            </div><!-- speaker-wrap -->
+                            
+                        </div><!-- tab-pane -->
+
+
+                    </div><!-- tab-content -->
+                </div><!-- col -->
+
+
+            </div><!-- container -->
 
 
 </section>

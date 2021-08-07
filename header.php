@@ -33,9 +33,7 @@
             'walker'            => new WP_Bootstrap_Navwalker(),
         ) );
         ?>
-        <form class="d-flex">
-        <button class="btn btn-outline-success header-btn" type="submit">Comprar Boletos</button>
-       </form>
+
     </div>
 </nav>
 </div>
