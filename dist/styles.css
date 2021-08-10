@@ -10892,7 +10892,7 @@ html {
 body {
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
-  background-color: #F0EFEF;
+  background-color: white;
 }
 
 p {
@@ -10906,8 +10906,8 @@ a {
 }
 
 h1, .h1 {
-  font-size: 7.2rem;
-  line-height: 98px;
+  font-size: 40px;
+  line-height: 1.2;
 }
 
 h2, .h2 {
@@ -10993,7 +10993,6 @@ header .header-inner {
 .slider-text h1 span, .slider-text .h1 span {
   font-size: 54px;
   font-weight: 800;
-  color: #1162fb;
   text-transform: uppercase;
 }
 .slider-text p {
@@ -11001,6 +11000,28 @@ header .header-inner {
   line-height: 1.5;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.text-cian {
+  color: #00AFEF;
+}
+
+.text-fucsia {
+  color: #EC268F;
+}
+
+.text-azul {
+  color: #0A0DAD;
+}
+
+.text-green {
+  color: #7FBA00;
+}
+
+.btn-fucsia {
+  background-color: #EC268F;
+  color: white;
+  font-size: 15px;
 }
 
 #timer .time:first-child {
@@ -11054,7 +11075,7 @@ header .header-inner {
 .features {
   height: 27rem;
   padding: 7em;
-  background-color: #1162fb;
+  background-color: #F4F5F7;
 }
 
 footer {
@@ -11124,6 +11145,7 @@ footer {
 .fet-agenda .tab-content .speaker-wrap .text h2, .fet-agenda .tab-content .speaker-wrap .text .h2 {
   font-size: 24px;
   font-weight: 700;
+  line-height: 1.5;
 }
 .fet-agenda .tab-content .speaker-wrap .text .time {
   font-weight: 600;

@@ -18,7 +18,6 @@
         span{
             font-size: 54px;
             font-weight: 800;
-            color: #1162fb;
             text-transform: uppercase;
             }
         }
@@ -28,6 +27,16 @@
         font-weight: 300;
         color: rgba(0,0,0,0.8);
     }
+}
+.text-cian{color: $cian;}
+.text-fucsia{color: $fucsia;}
+.text-azul{color:$azul }
+.text-green{color: $green;}
+
+.btn-fucsia{
+    background-color: $fucsia;
+    color: white;
+    font-size: 15px;
 }
 
 #timer{
@@ -94,5 +103,5 @@
 .features{
     height: 27rem;
     padding: 7em;
-    background-color: #1162fb;
+    background-color: #F4F5F7;
 }

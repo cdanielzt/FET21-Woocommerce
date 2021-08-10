@@ -5,7 +5,11 @@
         <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
             <div class="col-lg-6 col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                 <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-                    <br><span>4° Foro Emprendedor Tapachula 2021</span>
+                    <br>
+                    <span class="text-cian">4°</span> 
+                    <span class="text-fucsia">Foro</span> 
+                    <span class="text-azul">Emprendedor</span>
+                    <span class="text-green">Tapachula 2021</span>  
                 </h1>
                 <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
                         class="icon-calendar mr-2"></span>4 y 5 de Noviembre de 2021 - Teatro de la Ciudad Tapachula,
@@ -37,7 +41,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Registrarme" class="btn btn-primary py-4 px-4">
+                        <input type="submit" value="Registrarme" class="btn btn-fucsia py-4 px-4">
                     </div>
                 </form>
             </div>
