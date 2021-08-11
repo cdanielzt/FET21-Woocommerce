@@ -60,10 +60,8 @@
 
 <section class="content">
     <div class="container">
-
-        <div class="col col-xl-5">
-            <?php the_post_thumbnail(); ?>
-        </div>
+        <div class="row gx-5">
+        
 
         <div class="col col-xl-7">
 
@@ -73,9 +71,12 @@
 
             <?php endwhile; else: endif;?>
         </div>
-
-
-
+        <div class="col col-xl-5">
+            <div class="d-flex justify-content-center">
+            <?php the_post_thumbnail('medium'); ?>
+            </div>
+        </div>
+        </div>
     </div>
 
 </section>
@@ -93,6 +94,7 @@
 
 
         <div class="fet-agenda">
+            <div class="container">
             <div class="row">
                 <div class="col-md-3 nav-link-wrap text-center text-md-right">
                     <div class="nav flex-column nav-pills">
@@ -109,22 +111,34 @@
                 </div><!-- col-md-3 -->
 
 
-
                 <div class="col-md-9 tab-wrap">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel"
                             aria-labelledby="day-1-tab">
+                            <?php
+                            $args = array(
+                                'post_type' => 'post',
+                                'post_status' => 'publish',
+                                'category_name' => 'conferencia',
+                                'posts_per_page' => 5,
+                            );
+                            $arr_posts = new WP_Query( $args );
+                            ?>
+                            <?php if($arr_posts->have_posts()): ?>
+                            <?php while ($arr_posts->have_posts()): ?>
+                                
+                             <?php $arr_posts->the_post(); ?>
                             <div class="speaker-wrap ftco-animate d-md-flex">
-                                <div class="img speaker-img"
-                                    style="background-image: url('<?php bloginfo('template_directory')?>/dist/img/ponentes/Carlos-Ozuna.jpeg')">
-                                </div>
+                               
+                                <?php if(has_post_thumbnail()):?>
+                                    <div class="img speaker-img"
+                                    style="background-image: url('<?php the_post_thumbnail_url( 'post_image' ); ?>' )">
+                                    </div>                             
+                                <?php endif;?>
+
                                 <div class="text">
-                                    <h2><a href="#">Introduction to Business Leaders</a></h2>
-                                    <p>A small river named Duden flows by their place and supplies it with the necessary
-                                        regelialia. It is a paradisematic country, in which roasted parts of sentences
-                                        fly
-                                        into
-                                        your mouth.</p>
+                                    <h2> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                    <p><?php the_excerpt(); ?></p>
                                     <span class="time">09:00 am - 4:30 pm</span>
                                     <p class="location"><span class="icon-map-o mr-2"></span>20 July 2019 - Hall,
                                         Building
@@ -137,10 +151,12 @@
                                         your mouth.</p>
                                     <h3 class="speaker-name">&mdash; <a href="#">Ryan Thompson</a> <span
                                             class="position">Founder of Wordpress</span></h3>
-
                                 </div><!-- text -->
                             </div><!-- speaker-wrap -->
-                            
+
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+
                         </div><!-- tab-pane -->
 
 
@@ -149,6 +165,7 @@
 
 
             </div><!-- container -->
+    </div>
 
 
 </section>

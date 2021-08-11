@@ -10893,21 +10893,28 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
   background-color: white;
+  color: #666;
 }
 
 p {
   font-size: 1.6rem;
   font-weight: 400;
-  color: #18191F;
 }
 
 a {
   text-decoration: none;
 }
 
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+}
+
 h1, .h1 {
   font-size: 40px;
   line-height: 1.2;
+  color: #333;
 }
 
 h2, .h2 {
@@ -10931,15 +10938,28 @@ header {
   position: relative;
 }
 header .header-inner {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 99;
-  background-color: transparent;
-  padding-top: 3rem;
+  background-color: white;
+  padding: 10px 0;
+}
+@media (min-width: 1200px) {
+  header .header-inner {
+    position: absolute;
+    padding-top: 3rem;
+    background-color: transparent;
+  }
 }
 
+@media (min-width: 1200px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 3rem;
+    font-weight: 200;
+    color: #00AFEF;
+  }
+}
 .nav-link {
   color: black !important;
   font-size: 1.6rem;
@@ -10958,18 +10978,18 @@ header .header-inner {
 }
 
 .navbar-scroll {
-  padding-top: 1rem !important;
+  padding: 9px 0;
   background-color: white !important;
-  padding: 1.2rem 0;
   position: fixed !important;
   top: 0;
   z-index: 99;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
   transition-duration: 0.6s;
 }
-
-.navbar-scroll .nav.link {
-  color: gray;
+@media (min-width: 1200px) {
+  .navbar-scroll {
+    padding: 1rem 0;
+    padding-top: 1rem !important;
+  }
 }
 
 .hero-wrap {
@@ -10986,20 +11006,28 @@ header .header-inner {
   height: 850px;
 }
 .slider-text h1, .slider-text .h1 {
-  font-size: 2.8rem;
-  line-height: 1.2;
-  font-weight: 200;
+  font-size: 40px;
 }
 .slider-text h1 span, .slider-text .h1 span {
-  font-size: 54px;
-  font-weight: 800;
-  text-transform: uppercase;
+  font-weight: bold;
 }
-.slider-text p {
-  font-size: 20px;
-  line-height: 1.5;
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.8);
+@media (min-width: 1200px) {
+  .slider-text h1, .slider-text .h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 200;
+  }
+  .slider-text h1 span, .slider-text .h1 span {
+    font-size: 54px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .slider-text p {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8);
+  }
 }
 
 .text-cian {
@@ -11028,6 +11056,7 @@ header .header-inner {
   border-left: transparent;
 }
 #timer .time {
+  padding-left: 1rem;
   width: 25%;
   font-size: 40px;
   font-weight: 500;
@@ -11131,16 +11160,29 @@ footer {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .fet-agenda .tab-content .speaker-wrap .speaker-img {
-  width: 180px;
-  height: 250px;
-  padding-left: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
+@media (min-width: 768px) {
+  .fet-agenda .tab-content .speaker-wrap .speaker-img {
+    width: 180px;
+    height: 250px;
+    padding-left: 40px;
+  }
+}
 .fet-agenda .tab-content .speaker-wrap .text {
-  width: calc(100% - 180px);
-  padding-left: 40px;
+  width: 100%;
+  padding-left: 0;
+}
+@media (min-width: 1200px) {
+  .fet-agenda .tab-content .speaker-wrap .text {
+    width: calc(100% - 180px);
+    padding-left: 40px;
+  }
 }
 .fet-agenda .tab-content .speaker-wrap .text h2, .fet-agenda .tab-content .speaker-wrap .text .h2 {
   font-size: 24px;

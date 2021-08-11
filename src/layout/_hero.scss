@@ -12,6 +12,15 @@
 .slider-text{
     height: 850px;
     h1{
+        font-size: 40px;
+        span{
+            font-weight: bold;
+        }
+    }
+
+    @include desktop{
+   
+    h1{
         font-size: 2.8rem;
         line-height: 1.2;
         font-weight: 200;
@@ -27,12 +36,12 @@
         font-weight: 300;
         color: rgba(0,0,0,0.8);
     }
+    }
 }
 .text-cian{color: $cian;}
 .text-fucsia{color: $fucsia;}
 .text-azul{color:$azul }
 .text-green{color: $green;}
-
 .btn-fucsia{
     background-color: $fucsia;
     color: white;
@@ -42,8 +51,10 @@
 #timer{
     .time:first-child{
         border-left: transparent;
+        
     }
     .time{
+        padding-left: 1rem;
         width: 25%;
         font-size: 40px;
         font-weight: 500;
