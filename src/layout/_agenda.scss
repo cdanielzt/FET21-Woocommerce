@@ -1,0 +1,118 @@
+.fet-agenda{
+    position: relative;
+    width: 100%;
+    display: block;
+
+    .nav-pills{
+        width: 100%;
+        display: block;
+
+        .nav-link{
+            text-align: end;
+            padding: 35px 30px !important;
+            border-radius: 0;
+            margin-bottom: 0;
+            color: #fff !important;
+            font-size: 20px !important;
+            font-weight: 700;
+            position: relative;
+            display: inline-block !important;
+            border: 1px solid transparent;
+            background: #1162fb;
+            width: 100%;
+            margin-bottom: 10px;
+            -webkit-box-shadow: 0 7px 15px -5px rgb(0 0 0 / 7%);
+            -moz-box-shadow: 0 7px 15px -5px rgba(0,0,0,.07);
+            box-shadow: 0 7px 15px -5px rgb(0 0 0 / 7%);
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            border-radius: 0;
+
+            span{
+                display: block;
+                font-size: 24px;
+                font-weight: 200;
+            }
+        }
+    }
+
+    .tab-content{
+        border-radius: 0;
+
+        .speaker-wrap{
+            width: 100%;
+            background: #fff;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            .speaker-img{
+                margin-bottom: 20px;
+                width: 100%;
+                height: 400px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+
+                @include tablet{
+                width: 180px;
+                height: 250px;
+                padding-left: 40px;
+                }
+                
+                
+            }
+
+            .text{
+                width: 100%;
+                padding-left: 0;
+                @include desktop{
+                width: calc(100% - 180px);
+                padding-left: 40px;
+                }
+                
+                h2{
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 1.5;
+                }
+                .time{
+                    font-weight: 600;
+                    color: #1162fb;
+                    font-size: 20px;
+                    display: block;
+                    margin-bottom: 10px;
+                }
+                .location{
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: #000000;
+                }
+                .speaker-name{
+                    font-size: 20px ;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        > .tab-pane{
+            display: none;
+        }
+
+        > .active{
+            display: block;
+        }
+
+
+    }
+}
+
+.flex-column{
+    flex-direction: column !important;
+}
