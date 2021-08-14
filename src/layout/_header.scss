@@ -48,6 +48,7 @@ position: relative;
     position: fixed !important;
     top: 0;
     z-index: 99;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
     transition-duration: 0.6s;
     @include desktop{
         padding: 1rem 0;

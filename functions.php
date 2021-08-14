@@ -61,3 +61,119 @@ function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+/**
+ * Custom Post Type Ponentes
+ */
+
+add_action( 'init', 'bf_register_custom_post_type' );
+/**
+ * Registro un custom post type 'libro'.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_post_type
+ */
+function bf_register_custom_post_type() {
+    /* Añado las etiquetas que aparecerán en el escritorio de WordPress */
+	$labels = array(
+		'name'               => _x( 'Ponentes', 'post type general name', 'text-domain' ),
+		'singular_name'      => _x( 'Ponente', 'post type singular name', 'text-domain' ),
+		'menu_name'          => _x( 'Ponentes', 'admin menu', 'text-domain' ),
+		'add_new'            => _x( 'Añadir nuevo', 'ponente', 'text-domain' ),
+		'add_new_item'       => __( 'Añadir nuevo ponente', 'text-domain' ),
+		'new_item'           => __( 'Nuevo Ponente', 'text-domain' ),
+		'edit_item'          => __( 'Editar Ponente', 'text-domain' ),
+		'view_item'          => __( 'Ver ponente', 'text-domain' ),
+		'all_items'          => __( 'Todos los ponentes', 'text-domain' ),
+		'search_items'       => __( 'Buscar ponentes', 'text-domain' ),
+		'not_found'          => __( 'No hay ponentes.', 'text-domain' ),
+		'not_found_in_trash' => __( 'No hay ponentes en la papelera.', 'text-domain' )
+	);
+
+    /* Configuro el comportamiento y funcionalidades del nuevo custom post type */
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __( 'Descripción.', 'text-domain' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'ponente' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+        'menu_icon'          => 'dashicons-businessman',
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+	);
+
+	register_post_type( 'ponente', $args );
+}
+
+/**
+ * Custom Post Type Ponentes
+ */
+
+add_action( 'init', 'bf_register_conferencia_post_type' );
+/**
+ * Registro un custom post type 'libro'.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_post_type
+ */
+function bf_register_conferencia_post_type() {
+    /* Añado las etiquetas que aparecerán en el escritorio de WordPress */
+	$labels = array(
+		'name'               => _x( 'Conferencias', 'post type general name', 'text-domain' ),
+		'singular_name'      => _x( 'Conferencia', 'post type singular name', 'text-domain' ),
+		'menu_name'          => _x( 'Conferencias', 'admin menu', 'text-domain' ),
+		'add_new'            => _x( 'Añadir nuevo', 'conferencia', 'text-domain' ),
+		'add_new_item'       => __( 'Añadir nueva conferencia', 'text-domain' ),
+		'new_item'           => __( 'Nueva conferencia', 'text-domain' ),
+		'edit_item'          => __( 'Editar conferencia', 'text-domain' ),
+		'view_item'          => __( 'Ver conferencia', 'text-domain' ),
+		'all_items'          => __( 'Todas las conferencias', 'text-domain' ),
+		'search_items'       => __( 'Buscar conferencias', 'text-domain' ),
+		'not_found'          => __( 'No hay conferencias.', 'text-domain' ),
+		'not_found_in_trash' => __( 'No hay conferencias en la papelera.', 'text-domain' )
+	);
+
+    /* Configuro el comportamiento y funcionalidades del nuevo custom post type */
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __( 'Descripción.', 'text-domain' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'ponente' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+        'menu_icon'          => 'dashicons-microphone',
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+	);
+
+	register_post_type( 'conferencia', $args );
+}
+
+/**
+ * Nueva taxonomia
+ */
+add_action('init','fetRegisterTax');
+function fetRegisterTax(){
+    $args = array(
+        'hierarchical' => false,
+        'labels' => array(
+            'name' => 'Categoria de Conferencia',
+            'singular_name' => 'Categoria de conferencias'
+        ),
+        'show_in_nav_menu' => true,
+        'show_admin_column' => true,
+        'rewrite' => array(
+            'slug' => 'categoria-conferencias'
+        )
+        );
+        register_taxonomy( 'categoria-conferencias',array('conferencia'), $args);
+}

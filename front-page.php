@@ -117,9 +117,8 @@
                             aria-labelledby="day-1-tab">
                             <?php
                             $args = array(
-                                'post_type' => 'post',
+                                'post_type' => 'conferencia',
                                 'post_status' => 'publish',
-                                'category_name' => 'conferencia',
                                 'posts_per_page' => 5,
                             );
                             $arr_posts = new WP_Query( $args );
