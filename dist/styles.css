@@ -11276,11 +11276,15 @@ html {
 body {
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
+  line-height: 1.8;
+  font-weight: 400;
   background-color: white;
   color: #666;
 }
 
 p {
+  margin-top: 0;
+  margin-bottom: 1rem;
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -11316,6 +11320,14 @@ h3, .h3 {
     font-size: 4rem;
     line-height: 54px;
   }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 header {
@@ -11500,6 +11512,10 @@ footer {
 .content {
   height: auto;
   padding: 5rem 0;
+}
+
+.about h2, .about .h2 {
+  font-weight: 600;
 }
 
 .fet-agenda {

@@ -104,7 +104,8 @@ function bf_register_custom_post_type() {
 		'hierarchical'       => false,
 		'menu_position'      => null,
         'menu_icon'          => 'dashicons-businessman',
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+		'show_in_rest'	 	 => true
 	);
 
 	register_post_type( 'ponente', $args );
@@ -152,7 +153,8 @@ function bf_register_conferencia_post_type() {
 		'hierarchical'       => false,
 		'menu_position'      => null,
         'menu_icon'          => 'dashicons-microphone',
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+		'show_in_rest'	 	 => true
 	);
 
 	register_post_type( 'conferencia', $args );
