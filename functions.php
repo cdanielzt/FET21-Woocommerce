@@ -97,10 +97,10 @@ function bf_register_custom_post_type() {
 		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
+		'show_in_nav_menus'  => true,
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'ponente' ),
 		'capability_type'    => 'post',
-		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
         'menu_icon'          => 'dashicons-businessman',
@@ -110,7 +110,7 @@ function bf_register_custom_post_type() {
 		'has_archive' 		 => true
 	);
 
-	register_post_type('ponente', $args );
+	register_post_type('ponentes', $args );
 }
 
 /**
@@ -148,6 +148,7 @@ function bf_register_conferencia_post_type() {
 		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
+		'show_in_nav_menus'  => true,
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'conferencia' ),
 		'capability_type'    => 'post',
@@ -161,7 +162,7 @@ function bf_register_conferencia_post_type() {
 		'has_archive' 		 => true
 	);
 
-	register_post_type( 'conferencia', $args );
+	register_post_type( 'conferencias', $args );
 }
 
 /**
