@@ -140,18 +140,13 @@
                                 <div class="text">
                                     <h2> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                     <p><?php the_excerpt(); ?></p>
-                                    <span class="time">09:00 am - 4:30 pm</span>
-                                    <p class="location"><span class="icon-map-o mr-2"></span>20 July 2019 - Hall,
-                                        Building
-                                        Los
-                                        Angeles CA</p>
-                                    <p>A small river named Duden flows by their place and supplies it with the necessary
-                                        regelialia. It is a paradisematic country, in which roasted parts of sentences
-                                        fly
-                                        into
-                                        your mouth.</p>
-                                    <h3 class="speaker-name">&mdash; <a href="#">Ryan Thompson</a> <span
-                                            class="position">Founder of Wordpress</span></h3>
+                                    <?php
+                                    $fields = get_fields();
+                                    ?>
+                                    <span class="time"><?php echo $fields['horario'] ?></span>
+                 
+                                    <h3 class="speaker-name">&mdash; <a href="#"><?php echo $fields['ponente'] ?></a> <span
+                                            class="position"><?php echo $fields['puesto'] ?></span></h3>
                                 </div><!-- text -->
                             </div><!-- speaker-wrap -->
 
