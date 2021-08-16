@@ -23,27 +23,10 @@
             </div>
             <div class="col-lg-2 col"></div>
             <div class="col-lg-4 col-md-6 mt-0 mt-md-5">
-                <form action="#" class="request-form ftco-animate">
+                <div class="request-form ftco-animate">
                     <h2>¡Aparta tu lugar!</h2>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nombre">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Correo electrónico">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Teléfono">
-                    </div>
-                    <div class="form-group">
-                        <div class="checkbox mb-4">
-                            <label><input type="checkbox" value="" class="mr-3"> He leido y acepto los términos y
-                                condiciones.</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Registrarme" class="btn btn-fucsia py-4 px-4">
-                    </div>
-                </form>
+                    <?php echo do_shortcode('[contact-form-7 id="28" title="Formulario preRegistro"]')?>
+                </div>
             </div>
         </div>
     </div>
