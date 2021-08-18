@@ -2,8 +2,8 @@
 
 <div class="hero-wrap" style="" data-stellar-background-ratio="0.5">
     <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-            <div class="col-lg-6 col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+        <div class="row no-gutters slider-text align-content-center justify-content-start" data-scrollax-parent="true">
+            <div class="col-xl-6 col-lg-6 col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                 <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                     <br>
                     <span class="text-cian">4°</span> 
@@ -21,18 +21,16 @@
                     <div class="time pl-3" id="segundos"></div>
                 </div>
             </div>
-            <div class="col-lg-2 col"></div>
-            <div class="col-lg-4 col-md-6 mt-0 mt-md-5">
+            <div class="col col-lg-2 d-md-none d-lg-block"></div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mt-0 mt-md-5">
                 <div class="request-form ftco-animate">
                     <h2>¡Aparta tu lugar!</h2>
                     <?php echo do_shortcode('[contact-form-7 id="28" title="Formulario preRegistro"]')?>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
+            </div>  <!-- col -->
+        </div> <!-- row -->
+    </div><!-- container -->
+</div> <!-- hero wrap -->
 
 <section>
     <div class="features">

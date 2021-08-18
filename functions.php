@@ -182,5 +182,6 @@ function fetRegisterTax(){
             'slug' => 'categoria-conferencias'
         )
         );
-        register_taxonomy( 'categoria-conferencias',array('conferencia'), $args);
+        register_taxonomy( 'categoria-conferencias',array('conferencias'), $args);
+		
 }
