@@ -1,120 +1,120 @@
+.hero-wrap {
+  width: 100%;
+  height: 1000px;
+  background-image: url("../dist/img/fondo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: auto;
+  @include tablet{
+      height: 850px;
+  }
+}
 
-.hero-wrap{
+.slider-text {
+  height: 850px;
+  h1 {
+    font-size: 40px;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  @include desktop {
+    h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      font-weight: 200;
+      span {
+        font-size: 54px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+    }
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+.text-cian {
+  color: $cian;
+}
+.text-fucsia {
+  color: $fucsia;
+}
+.text-azul {
+  color: $azul;
+}
+.text-green {
+  color: $green;
+}
+.btn-fucsia {
+  background-color: $fucsia;
+  color: white;
+  font-size: 15px;
+}
+
+#timer {
+  .time:first-child {
+    border-left: transparent;
+  }
+  .time {
+    padding-left: 1rem;
+    width: 25%;
+    font-size: 40px;
+    font-weight: 500;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    color: $cian;
+
+    span {
+      font-size: 12px;
+      display: block;
+      color: black;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.request-form {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 10px 31px -21px rgb(0 0 0 / 33%);
+  -moz-box-shadow: 0px 10px 31px -21px rgba(0, 0, 0, 0.33);
+  box-shadow: 0px 10px 31px -21px rgb(0 0 0 / 33%);
+  h2 {
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+
+  .form-control {
+    border: transparent !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    height: 52px !important;
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent !important;
+    color: rgba(0, 0, 0, 0.9) !important;
+    font-size: 16px;
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    margin-bottom: 2rem;
+  }
+  .label {
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    margin-top: 1rem;
     width: 100%;
-    height: 850px;
-    position: inherit;
-    background-image: url('../dist/img/fondo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.slider-text{
-    height: 850px;
-    h1{
-        font-size: 40px;
-        span{
-            font-weight: bold;
-        }
-    }
-
-    @include desktop{
-   
-    h1{
-        font-size: 2.8rem;
-        line-height: 1.2;
-        font-weight: 200;
-        span{
-            font-size: 54px;
-            font-weight: 800;
-            text-transform: uppercase;
-            }
-        }
-    p{
-        font-size: 20px;
-        line-height: 1.5;
-        font-weight: 300;
-        color: rgba(0,0,0,0.8);
-    }
-    }
-}
-.text-cian{color: $cian;}
-.text-fucsia{color: $fucsia;}
-.text-azul{color:$azul }
-.text-green{color: $green;}
-.btn-fucsia{
-    background-color: $fucsia;
-    color: white;
-    font-size: 15px;
-}
-
-#timer{
-    .time:first-child{
-        border-left: transparent;
-        
-    }
-    .time{
-        padding-left: 1rem;
-        width: 25%;
-        font-size: 40px;
-        font-weight: 500;
-        border-left: 1px solid rgba(0,0,0,0.05);
-        color: $cian;
-
-        span{
-            font-size: 12px;
-            display: block;
-            color: black;
-            text-transform: uppercase;
-        }
-    }
-    
-}
-
-
-.request-form{
-    margin-top: 2rem;
-    background: #fff;
-    padding: 30px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0px 10px 31px -21px rgb(0 0 0 / 33%);
-    -moz-box-shadow: 0px 10px 31px -21px rgba(0, 0, 0, 0.33);
-    box-shadow: 0px 10px 31px -21px rgb(0 0 0 / 33%);
-    h2{
-        font-size: 3rem;
-        line-height: 1.5;
-    }
-
-    .form-control{
-        border: transparent !important;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-        height: 52px !important;
-        padding-left: 0;
-        padding-right: 0;
-        background: transparent !important;
-        color: rgba(0, 0, 0, 0.9) !important;
-        font-size: 16px;
-        border-radius: 0px;
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
-        margin-bottom: 2rem;
-    }
-    .label{
-        margin-bottom: 2rem;
-    }
-
-    .btn{
-        margin-top: 1rem;
-        width: 100%;
-        display: block !important;
-    }
-}
-
-.features{
-    height: 27rem;
-    padding: 7em;
-    background-color: #F4F5F7;
+    display: block !important;
+  }
 }

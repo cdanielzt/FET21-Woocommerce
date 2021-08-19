@@ -1,8 +1,8 @@
 <?php get_header() ?>
-
-<div class="hero-wrap" style="" data-stellar-background-ratio="0.5">
+<section>
+<div class="hero-wrap">
     <div class="container">
-        <div class="row no-gutters slider-text align-content-center justify-content-start" data-scrollax-parent="true">
+        <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
             <div class="col-xl-6 col-lg-6 col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                 <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                     <br>
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="col col-lg-2 d-md-none d-lg-block"></div>
-            <div class="col-xl-4 col-lg-4 col-md-6 mt-0 mt-md-5">
+            <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="request-form ftco-animate">
                     <h2>¡Aparta tu lugar!</h2>
                     <?php echo do_shortcode('[contact-form-7 id="28" title="Formulario preRegistro"]')?>
@@ -31,15 +31,63 @@
         </div> <!-- row -->
     </div><!-- container -->
 </div> <!-- hero wrap -->
+</section>
 
-<section>
-    <div class="features">
+
+<section class="ftco-section bg-primary">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-3 d-flex align-self-stretch">
+                <div class="media block-6 services d-block">
+                    <div class="icon">
+                    <img src="<?php bloginfo('template_directory')?>/images/icons/place-localizer.svg" alt="" width="70">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading mb-3">Sede</h3>
+                        <p>Teatro de la Ciudad. Av. Independencia s/n, INFONAVIT Solidaridad 2000, Tapachula, Chiapas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-self-stretch">
+                <div class="media block-6 services d-block">
+                    <div class="icon">
+                    <img src="<?php bloginfo('template_directory')?>/images/icons/job-interview.svg" alt="" width="70">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading mb-3">Evento Híbrido</h3>
+                        <p>Lo mejor de los dos mundos. Disfruta del Foro de manera presencial o virtual.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-self-stretch">
+                <div class="media block-6 services d-block">
+                    <div class="icon">
+                    <img src="<?php bloginfo('template_directory')?>/images/icons/employee.svg" alt="" width="70">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading mb-3">12 Ponentes</h3>
+                        <p>Disfruta de la experiencia de conocer las historias de los ponentes, emprendedores, empresarios, Conferencistas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-self-stretch">
+                <div class="media block-6 services d-block">
+                    <div class="icon">
+                    <img src="<?php bloginfo('template_directory')?>/images/icons/employee.svg" alt="" width="70">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading mb-3">12 Ponentes</h3>
+                        <p>Disfruta de la experiencia de conocer las historias de los ponentes, emprendedores, empresarios, Conferencistas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
 
 
-<section class="">
+<section class="ftco-section">
     <div class="container">
         <div class="row gx-5">
         
@@ -64,7 +112,7 @@
 
 </section>
 
-<section class="bg-light">
+<section class="ftco-section">
 
     <div class="container">
         <div class="row justify-content-center mb-5">
