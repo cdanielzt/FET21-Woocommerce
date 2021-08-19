@@ -2,18 +2,44 @@
     width: 100%;
     
     .img{
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
         width: 120px;
+        min-width: 120px;
         height: 160px;
+        position: relative;
     }
 
     .text{
+        padding-left: 2.4rem;
         position: relative;
     }
     .h3{
-        font-size: 20px;
+        font-size: 20px !important;
         font-weight: 600;
         margin-bottom: 0;
         color: #1162fb;
+    }
+    .position{
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
+    .ftco-social{
+        margin: 0;
+        padding: 0;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        transition: all .3s ease;
+        li{
+            display: inline-block;
+            padding: 0 5px;
+        }
     }
 }
 
