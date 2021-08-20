@@ -1,7 +1,7 @@
 require('bootstrap');
 
 // Set the date we're counting down to
-var countDownDate = new Date("Nov 5, 2021 15:37:25").getTime();
+var countDownDate = new Date("Nov 5, 2021 09:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -63,3 +63,46 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 }); 
+
+(function($){
+  $('#categorias-productos').change(function(){
+    $.ajax({
+      url: fet.ajaxurl,
+      method:"POST",
+      data: {
+        "action": "fetFiltroPonencias",
+        "categoria": $(this).find(':selected').val()
+      },
+      beforeSend: function(){
+        $("#v-pills-1").html("Cargando...")
+      },
+      success: function(data){
+        let html = "";
+        
+        data.forEach(item =>{
+          html += `<div class="speaker-wrap d-md-flex">
+          <div class="img speaker-img" style="background-image: url(${item.imagen})">
+          
+          </div> 
+
+        <div class="text">
+          <h2> <a href="${item.link}"> TITULO DE LA PONENCIA </a> </h2>
+         <p> EXCERPT </p>
+         <span class="time">HORARIO</span>
+                 
+          <h3 class="speaker-name">&mdash; <a href="${item.link}">${item.titulo}</a>
+          <span
+          class="position"> Puesto </span></h3>
+          </div>
+          </div>`
+        })
+        $('#v-pills-1').html(html);
+      },
+      error: function(error) {
+        console.log(error);
+      }
+    })
+
+  })
+
+})(jQuery);

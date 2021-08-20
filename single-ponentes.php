@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<section class="content">
+<section class="ftco-section">
 
 <div class="container mt-4">
         <div class="row">

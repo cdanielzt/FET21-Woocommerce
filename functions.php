@@ -14,6 +14,12 @@ add_action( 'wp_enqueue_scripts', 'load_stylesheets');
 function load_javascript(){
     wp_register_script( 'custom', get_template_directory_uri() . '/dist/app.js', 'jquery', 1, true );
     wp_enqueue_script('custom');
+
+	//Agregar JQuery
+	wp_enqueue_script('jquery');
+	wp_localize_script('custom', 'fet',array(
+		'ajaxurl' => admin_url('admin-ajax.php')
+	));
 }
 
 add_action('wp_enqueue_scripts','load_javascript');
@@ -21,7 +27,7 @@ add_action('wp_enqueue_scripts','load_javascript');
 //Add Google Fonts
 function wpb_add_google_fonts() {
  
-    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap', false ); 
+    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@200;500;600;700;800&display=swap', false ); 
 }
      
     add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
@@ -107,63 +113,13 @@ function bf_register_custom_post_type() {
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
 		'show_in_rest'	 	 => true,
 		'public' 			 => true,
-		'has_archive' 		 => true
+		'has_archive' 		 => true,
+		'taxonomies'          => array('category','categoria-conferencias')
 	);
 
 	register_post_type('ponentes', $args );
 }
 
-/**
- * Custom Post Type Ponentes
- */
-
-add_action( 'init', 'bf_register_conferencia_post_type' );
-/**
- * Registro un custom post type 'libro'.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_post_type
- */
-function bf_register_conferencia_post_type() {
-    /* Añado las etiquetas que aparecerán en el escritorio de WordPress */
-	$labels = array(
-		'name'               => _x( 'Conferencias', 'post type general name', 'text-domain' ),
-		'singular_name'      => _x( 'Conferencia', 'post type singular name', 'text-domain' ),
-		'menu_name'          => _x( 'Conferencias', 'admin menu', 'text-domain' ),
-		'add_new'            => _x( 'Añadir nuevo', 'conferencia', 'text-domain' ),
-		'add_new_item'       => __( 'Añadir nueva conferencia', 'text-domain' ),
-		'new_item'           => __( 'Nueva conferencia', 'text-domain' ),
-		'edit_item'          => __( 'Editar conferencia', 'text-domain' ),
-		'view_item'          => __( 'Ver conferencia', 'text-domain' ),
-		'all_items'          => __( 'Todas las conferencias', 'text-domain' ),
-		'search_items'       => __( 'Buscar conferencias', 'text-domain' ),
-		'not_found'          => __( 'No hay conferencias.', 'text-domain' ),
-		'not_found_in_trash' => __( 'No hay conferencias en la papelera.', 'text-domain' )
-	);
-
-    /* Configuro el comportamiento y funcionalidades del nuevo custom post type */
-	$args = array(
-		'labels'             => $labels,
-		'description'        => __( 'Descripción.', 'text-domain' ),
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'show_in_nav_menus'  => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'conferencia' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-        'menu_icon'          => 'dashicons-microphone',
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
-		'show_in_rest'	 	 => true,
-		'public' 			 => true,
-		'has_archive' 		 => true
-	);
-
-	register_post_type( 'conferencias', $args );
-}
 
 /**
  * Nueva taxonomia
@@ -182,13 +138,51 @@ function fetRegisterTax(){
             'slug' => 'categoria-conferencias'
         )
         );
-        register_taxonomy( 'categoria-conferencias',array('conferencias'), $args);
+        register_taxonomy( 'categoria-conferencias',array('ponentes'), $args);
 
 	// Filter except length to 35 words.
 	// tn custom excerpt length
 	function tn_custom_excerpt_length( $length ) {
-		return 11;
+		return 15;
 		}
 		add_filter( 'excerpt_length', 'tn_custom_excerpt_length', 999 );
 			
 }
+
+add_action("wp_ajax_fetFiltroPonencias","fetFiltroPonencias");
+add_action("wp_ajax_nopriv_fetFiltroPonencias","fetFiltroPonencias");
+function fetFiltroPonencias(){
+	$ID = get_the_ID();
+	$args = array(
+		'post_type' => 'ponentes',
+		'post_status' => 'publish',
+		'post_per_page' => -1,
+		'order' => 'ASC',
+		'orderby' => 'title',
+		'post__not_in' => array($ID),
+	);
+	if($_POST['categoria']){
+	$args['tax_query'] = array(
+		array(
+			'taxonomy' => 'categoria-conferencias',
+			'field' => 'slug',
+			'terms' => $_POST['categoria']
+		)
+		);
+	}
+	$posts = new WP_Query($args);
+
+	if($posts->have_posts()){
+		$return = array();
+		while($posts->have_posts()){
+			$posts->the_post();
+			$return[] = array(
+				'imagen' => get_the_post_thumbnail_url(),
+				'link' => get_the_permalink(),
+				'titulo' => get_the_title(),
+			);
+		}
+		wp_send_json($return);
+	}
+}
+

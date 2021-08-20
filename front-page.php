@@ -34,7 +34,7 @@
 </section>
 
 
-<section class="ftco-section bg-primary">
+<section class="ftco-section section-services">
     <div class="container">
         <div class="row d-flex">
             <div class="col-md-3 d-flex align-self-stretch">
@@ -127,37 +127,68 @@
         <div class="fet-agenda">
             <div class="container">
             <div class="row">
+
                 <div class="col-md-3 nav-link-wrap text-center text-md-right">
-                    <div class="nav flex-column nav-pills">
-                        <a class="nav-link ftco-animate active fadeInUp ftco-animated" id="v-pills-1-tab"
-                            data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1"
-                            aria-selected="true">Primer día <span>4
-                                de noviembre</span></a>
-                        <a class="nav-link ftco-animate active fadeInUp ftco-animated" id="v-pills-1-tab"
-                            data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1"
-                            aria-selected="true">Segundo día <span>5
-                                de noviembre</span></a>
-                    </div><!-- nav -->
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Primer día 
+                            <span>4 de noviembre 2021</span></button></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Segundo día 
+                            <span>5 de noviembre 2021</span></button></button>
+                </li>
+                </ul>
 
                 </div><!-- col-md-3 -->
 
 
                 <div class="col-md-9 tab-wrap">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel"
-                            aria-labelledby="day-1-tab">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="col mb-5">
+                        <select class="form-control"   
+                                    name="categorias-productos" 
+                                    id="categorias-productos">
+                            <option value="">Todas las categorias</option>
+                            <?php $terms = get_terms('categoria-conferencias', ['hide_empty' => true]) ?>
+                            <?php foreach ($terms as $term): ?>
+                                <option value="<?php echo $term->slug  ?>">
+                                    <?php echo $term->name ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        </div>
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                             <?php
-                            $args = array(
-                                'post_type' => 'conferencia',
+                              $args = array(
+                                'post_type' => 'Ponentes',
                                 'post_status' => 'publish',
-                                'posts_per_page' => 5,
+                                'posts_per_page' => -1,
+                                'meta_query' => array(
+                                    'relation' => 'AND',
+                                    'dia_evento' => array(
+                                        'key'     => 'dia_evento',
+                                        'value' => '1',
+                                        'compare' => 'EXISTS',
+                                    ),
+                                    'orden' => array(
+                                        'key'     => 'orden',
+                                        'compare' => 'EXISTS',
+                                    ), 
+                                ),
+                                'orderby'			=> array(
+                                    'dia_evento' =>'ASC',
+                                    'orden' => 'ASC'
+                                )
                             );
                             $arr_posts = new WP_Query( $args );
                             ?>
+                            
                             <?php if($arr_posts->have_posts()): ?>
                             <?php while ($arr_posts->have_posts()): ?>
                                 
                              <?php $arr_posts->the_post(); ?>
+                             
                             <div class="speaker-wrap ftco-animate d-md-flex">
                                
                                 <?php if(has_post_thumbnail()):?>
@@ -167,14 +198,14 @@
                                 <?php endif;?>
 
                                 <div class="text">
-                                    <h2> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                    <p><?php the_excerpt(); ?></p>
-                                    <?php
+                                <?php
                                     $fields = get_fields();
                                     ?>
+                                    <h2> <a href="<?php the_permalink(); ?>"><?php echo $fields['titulo'] ?></a></h2>
+                                    <p><?php the_excerpt(); ?></p>
                                     <span class="time"><?php echo $fields['horario'] ?></span>
                  
-                                    <h3 class="speaker-name">&mdash; <a href="#"><?php echo $fields['ponente'] ?></a> <span
+                                    <h3 class="speaker-name">&mdash; <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span
                                             class="position"><?php echo $fields['puesto'] ?></span></h3>
                                 </div><!-- text -->
                             </div><!-- speaker-wrap -->
@@ -184,8 +215,63 @@
 
                         </div><!-- tab-pane -->
 
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <?php
+                            $args = array(
+                                'post_type' => 'Ponentes',
+                                'post_status' => 'publish',
+                                'posts_per_page' => -1,
+                                'meta_query' => array(
+                                    'relation' => 'AND',
+                                    'dia_evento' => array(
+                                        'key'     => 'dia_evento',
+                                        'value' => '2',
+                                        'compare' => 'EXISTS',
+                                    ),
+                                    'orden' => array(
+                                        'key'     => 'orden',
+                                        'compare' => 'EXISTS',
+                                    ), 
+                                ),
+                                'orderby'			=> array(
+                                    'dia_evento' =>'ASC',
+                                    'orden' => 'ASC'
+                                )
+                            );
+                            $arr_posts = new WP_Query( $args );
+                            ?>
+                            
+                            <?php if($arr_posts->have_posts()): ?>
+                            <?php while ($arr_posts->have_posts()): ?>
+                                
+                             <?php $arr_posts->the_post(); ?>
+                             
+                            <div class="speaker-wrap ftco-animate d-md-flex">
+                               
+                                <?php if(has_post_thumbnail()):?>
+                                    <div class="img speaker-img"
+                                    style="background-image: url('<?php the_post_thumbnail_url( 'post_image' ); ?>' )">
+                                    </div>                             
+                                <?php endif;?>
 
+                                <div class="text">
+                                <?php
+                                    $fields = get_fields();
+                                    ?>
+                                    <h2> <a href="<?php the_permalink(); ?>"><?php echo $fields['titulo'] ?></a></h2>
+                                    <p><?php the_excerpt(); ?></p>
+                                    <span class="time"><?php echo $fields['horario'] ?></span>
+                 
+                                    <h3 class="speaker-name">&mdash; <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span
+                                            class="position"><?php echo $fields['puesto'] ?></span></h3>
+                                </div><!-- text -->
+                            </div><!-- speaker-wrap -->
+
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                        </div>
                     </div><!-- tab-content -->
+                   
                 </div><!-- col -->
 
 
