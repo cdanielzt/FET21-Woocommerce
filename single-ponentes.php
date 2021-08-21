@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<section class="hero-wrap-2 parallax-window" data-parallax="scroll" data-image-src="<?php the_post_thumbnail_url( 'large' ); ?>"">
+<section class="hero-wrap-2 parallax-window" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>'/dist/img/fondo.png'">
     <div class="container">
         <div class="row no-gutter slider-text align-items-end justify-content-start align-content-end ">
         <h1><?php the_title(); ?></h1>
@@ -15,26 +15,20 @@
 
 </section>
 
-<section class="ftco-section">
+<section class="ftco-section pt-5">
 
 <div class="container">
         <div class="row">
-        
-        
-      
-        <div class="col-md-4 sidebar px-5">
+        <div class="col-md-4 sidebar px-5 ">
             <div class="sidebar-box d-flex justify-content-center">
                 <a href="<?php the_permalink()?>;">
-                <div class="img speaker-img"
-                                    style="background-image: url('<?php the_post_thumbnail_url( 'post_image' ); ?>' )">
-                                    </div>    
+                <div class="img speaker-img" style="background-image: url('<?php the_post_thumbnail_url( 'post_image' ); ?>' )"> </div>    
             </a>
             </div>
         
         </div>
 
-        <div class="col-md-8 order-md-last px-5">
-        <h2><?php the_title(); ?></h2>
+        <div class="col-md-8 px-5 order-md-first">
 
         <?php if(have_posts()) : while(have_posts()) : the_post();?>
 

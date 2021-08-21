@@ -1,11 +1,20 @@
 <?php get_header() ?>
 
+<section class="hero-wrap-2 parallax-window" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>'/dist/img/fondo.png'">
+    <div class="container">
+        <div class="row no-gutter slider-text align-items-end justify-content-start align-content-end">
+        <h1><?php post_type_archive_title(); ?></h1>
+        <div class="breadcrumbs mb-5" typeof="BreadcrumbList" vocab="https://schema.org/">
+            <?php if(function_exists('bcn_display'))
+            {
+                bcn_display();
+            }?>
+        </div>
+        </div>
+    </div>
 
 <section class="ftco-section my-5">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-                <h2 class="mb-1"><?php the_archive_title()?></h2>
-        </div>
+    <div class="container">|
         <div class="row">
             <div class="col d-flex align-items-stretch">
             <?php if (have_posts()) : ?>

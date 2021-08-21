@@ -4,8 +4,8 @@
 
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-start">
-            <div class="col-xl-6 col-lg-6 col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+            <div class="col-xl-6 col-lg-6 col-md-6 ftco-animate">
+                <h1 class="mb-4">
                     <br>
                     <span class="text-cian">4°</span> 
                     <span class="text-fucsia">Foro</span> 
