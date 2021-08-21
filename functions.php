@@ -15,6 +15,11 @@ function load_javascript(){
     wp_register_script( 'custom', get_template_directory_uri() . '/dist/app.js', 'jquery', 1, true );
     wp_enqueue_script('custom');
 
+	//Agregar font-awesome
+	
+	wp_register_script( 'awesome', 'https://use.fontawesome.com/7479d02950.js', '', 1, true );
+    wp_enqueue_script('awesome');
+
 	//Agregar JQuery
 	wp_enqueue_script('jquery');
 
