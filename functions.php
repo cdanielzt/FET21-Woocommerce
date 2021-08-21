@@ -196,4 +196,3 @@ function fetFiltroPonencias(){
 		wp_send_json($return);
 	}
 }
-

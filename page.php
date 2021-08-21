@@ -1,15 +1,26 @@
 <?php get_header() ?>
 
+<section class="hero-wrap hero-wrap-2">
+    <div class="container">
+        <div class="row no-gutter">
+
+        </div>
+    </div>
+
+</section>
+
 <section class="content">
 
 <div class="container">
+
+  
    
     <div class="row">
         
             
         
         <div class="col-lg-3">
-            <div class="sticky-top">
+            <div class="">
             <?php get_sidebar(); ?>
             </div>
         </div>
