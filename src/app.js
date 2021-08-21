@@ -1,4 +1,5 @@
 require('bootstrap');
+require('@fortawesome/fontawesome-free');
 
 // Set the date we're counting down to
 var countDownDate = new Date("Nov 5, 2021 09:00:00").getTime();
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 }); 
 
+
 (function($){
   $('#categorias-productos').change(function(){
     $.ajax({
@@ -74,12 +76,14 @@ document.addEventListener("DOMContentLoaded", function(){
         "categoria": $(this).find(':selected').val()
       },
       beforeSend: function(){
-        $("#v-pills-1").html("Cargando...")
+        $("#pills-home").html("Cargando...")
       },
       success: function(data){
+        
         let html = "";
         
         data.forEach(item =>{
+          console.log(item);
           html += `<div class="speaker-wrap d-md-flex">
           <div class="img speaker-img" style="background-image: url(${item.imagen})">
           
@@ -96,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function(){
           </div>
           </div>`
         })
-        $('#v-pills-1').html(html);
+        $('#pills-home').html(html);
       },
       error: function(error) {
         console.log(error);

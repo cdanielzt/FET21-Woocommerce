@@ -17,6 +17,7 @@ function load_javascript(){
 
 	//Agregar JQuery
 	wp_enqueue_script('jquery');
+
 	wp_localize_script('custom', 'fet',array(
 		'ajaxurl' => admin_url('admin-ajax.php')
 	));
@@ -27,7 +28,7 @@ add_action('wp_enqueue_scripts','load_javascript');
 //Add Google Fonts
 function wpb_add_google_fonts() {
  
-    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@200;500;600;700;800&display=swap', false ); 
+    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap', false ); 
 }
      
     add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
@@ -177,7 +178,7 @@ function fetFiltroPonencias(){
 		while($posts->have_posts()){
 			$posts->the_post();
 			$return[] = array(
-				'imagen' => get_the_post_thumbnail_url(),
+				'imagen' => get_the_post_thumbnail_url( get_the_id( ), 'large' ),
 				'link' => get_the_permalink(),
 				'titulo' => get_the_title(),
 			);
