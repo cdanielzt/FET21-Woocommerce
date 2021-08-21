@@ -118,25 +118,24 @@
         <div class="row justify-content-center mb-5">
 
             <div class="col-md-7 text-center">
-                <h3 class="mb-3 pt-3">Agenda del evento</h3>
+                <h2 class="mb-3 pt-3">Agenda del evento</h2>
             </div>
         </div>
 
 
 
         <div class="fet-agenda">
-            <div class="container">
             <div class="row">
 
-                <div class="col-md-3 nav-link-wrap text-center text-md-right">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <div class="col-md-3 nav-link-wrap text-center ">
+                <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Primer día 
-                            <span>4 de noviembre 2021</span></button></button>
+                    <button class="nav-link active text-md-end" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Primer día 
+                            <span class="text-md-end">4 Nov 2021</span></button>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Segundo día 
-                            <span>5 de noviembre 2021</span></button></button>
+                <li class="nav-item " role="presentation">
+                    <button class="nav-link text-md-end" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Segundo día 
+                            <span class="text-md-end">5 Nov 2021</span></button>
                 </li>
                 </ul>
 
@@ -273,9 +272,6 @@
                     </div><!-- tab-content -->
                    
                 </div><!-- col -->
-
-
-            </div><!-- container -->
     </div>
 
 

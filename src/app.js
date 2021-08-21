@@ -1,5 +1,4 @@
-require('bootstrap');
-require('@fortawesome/fontawesome-free');
+require('bootstrap');;
 
 // Set the date we're counting down to
 var countDownDate = new Date("Nov 5, 2021 09:00:00").getTime();

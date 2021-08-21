@@ -2,19 +2,24 @@
 
 <section class="ftco-section">
 
-<div class="container mt-4">
+<div class="container">
         <div class="row">
-            
+        
+        
       
-        <div class="col-md-6 col-12">
-        <a href="<?php the_permalink()?>;">
-            <?php if(has_post_thumbnail()):?>
-                <img src="<?php the_post_thumbnail_url( 'post_image' ); ?>" alt="<?php the_title(); ?>" class="img-fluid">
-            <?php endif;?>
-        </a>
+        <div class="col-md-4 sidebar px-5">
+            <div class="sidebar-box d-flex justify-content-center">
+                <a href="<?php the_permalink()?>;">
+                <div class="img speaker-img"
+                                    style="background-image: url('<?php the_post_thumbnail_url( 'post_image' ); ?>' )">
+                                    </div>    
+            </a>
+            </div>
+        
         </div>
-        <div class="col-md-6 col-12">
-        <h1><?php the_title(); ?></h1>
+
+        <div class="col-md-8 order-md-last px-5">
+        <h2><?php the_title(); ?></h2>
 
         <?php if(have_posts()) : while(have_posts()) : the_post();?>
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foro Emprendedor Tapachula</title>
+    <title>Foro Emprendedor Tapachula 2021</title>
 
     <?php wp_head() ?>
 </head>
@@ -18,7 +18,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="<?php home_url() ?>">
+    <a class="navbar-brand" href="<?php echo home_url() ?>">
         <img src="<?php bloginfo('template_directory')?>/dist/img/logo-fet21.png" width="120" height="30" class="img-fluid logo" alt="Logo del sitio">
     </a>
         <?php

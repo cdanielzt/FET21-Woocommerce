@@ -47,6 +47,11 @@ register_nav_menus( array(
     'top-menu' => 'Top Menu'
 ) );
 
+register_nav_menus( array(
+    'footer' => 'Footer'
+) );
+
+
 //Add image sizes
 add_image_size( 'post_image', 1100, 550, false);
 
