@@ -1,8 +1,9 @@
 <?php get_header() ?>
 <section>
-<div class="hero-wrap">
+<div class="hero-wrap parallax-window" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>'/dist/img/fondo.png'">
+
     <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
+        <div class="row no-gutters slider-text align-items-center justify-content-start">
             <div class="col-xl-6 col-lg-6 col-md-6 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                 <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                     <br>
