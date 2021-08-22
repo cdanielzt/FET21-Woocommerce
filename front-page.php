@@ -66,8 +66,8 @@
                     <img src="<?php bloginfo('template_directory')?>/images/icons/employee.svg" alt="" width="70">
                     </div>
                     <div class="media-body">
-                        <h3 class="heading mb-3">12 Ponentes</h3>
-                        <p>Disfruta de la experiencia de conocer las historias de los ponentes, emprendedores, empresarios, Conferencistas.</p>
+                        <h3 class="heading mb-3">10 Ponentes</h3>
+                        <p>Conoce las historias de los ponentes, emprendedores, empresarios, Conferencistas de gran importancia en el mundo del Emprendimiento.</p>
                     </div>
                 </div>
             </div>
@@ -90,8 +90,7 @@
 
 <section class="ftco-section">
     <div class="container">
-        <div class="row gx-5">
-        
+        <div class="row">
 
         <div class="col-md-7 col-xl-7 about">
 
@@ -103,10 +102,8 @@
 
             <?php endwhile; else: endif;?>
         </div>
-        <div class="col-md-5 py-md-5 col-xl-5">
-            <div class="d-flex justify-content-center">
-            <?php the_post_thumbnail('medium'); ?>
-            </div>
+        <div class="col-md-5 d-flex justify-content-center">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFOROEMPRENDEDOR21%2F&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
         </div>
     </div>
@@ -116,10 +113,10 @@
 <section class="ftco-section">
 
     <div class="container">
-        <div class="row justify-content-center mb-5">
 
-            <div class="col-md-7 text-center">
-                <h2 class="mb-3 pt-3">Agenda del evento</h2>
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center heading-section">
+                <h2>Agenda del evento</h2>
             </div>
         </div>
 
@@ -200,6 +197,7 @@
                                 <?php
                                     $fields = get_fields();
                                     ?>
+                                    <p class="capitalised"><?php echo $fields['tipo_ponencia'] ?> <span><?php echo $fields['modalidad'] ?></span></p>
                                     <h2> <a href="<?php the_permalink(); ?>"><?php echo $fields['titulo'] ?></a></h2>
                                     <p><?php the_excerpt(); ?></p>
                                     <span class="time"><?php echo $fields['horario'] ?></span>

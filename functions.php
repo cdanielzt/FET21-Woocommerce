@@ -62,7 +62,9 @@ add_image_size( 'post_image', 1100, 550, false);
 register_sidebar( array(
     'name' => 'Sidebar de página',
     'id' => 'page-sidebar',
-    'class' => '',
+    'class' => 'list-unstyled"',
+	'before_widget' => '<ul class=""><li id="%1$s" class="list-unlysted">',
+    'after_widget'  => '</li></ul>',
     'before_title' => '<h4>',
     'after_title' => '</h4>'
 ));

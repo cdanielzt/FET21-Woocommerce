@@ -88,6 +88,21 @@
                     padding-left: 40px;
                 }
                 
+                .capitalised{
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    color: $fucsia;
+                    span{
+                        padding: 3px 4px;
+                        letter-spacing: 0;
+                        text-transform: initial;
+                        color: white;
+                        background-color: $green;
+                    }
+                }
              
                 h2{
                     font-size: 24px;
@@ -125,6 +140,9 @@
     }
 }
 
-.flex-column{
-    flex-direction: column !important;
+.heading-section{
+    h2{
+    font-size: 40px;
+    font-weight: 600;
+    }
 }

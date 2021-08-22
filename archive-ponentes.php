@@ -14,13 +14,13 @@
     </div>
 
 <section class="ftco-section my-5">
-    <div class="container">|
+    <div class="container">
         <div class="row">
-            <div class="col d-flex align-items-stretch">
+            <div class="col d-flex align-items-stretch flex-wrap">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : ?>
                 <?php the_post(); ?>
-                <div class="speaker ftco-animate speaker-1 d-flex align-items-center mb-5">
+                <div class="col-lg-6 speaker speaker-1 d-flex align-items-center mb-5">
                     <div class="img" style="background-image: url('<?php the_post_thumbnail_url('post_image'); ?>' )"></div>
                     <div class="text pl-4">
                         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
