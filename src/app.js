@@ -5,7 +5,7 @@ var countDownDate = new Date("Nov 5, 2021 09:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
-
+ 
   // Get today's date and time
   var now = new Date().getTime();
 
@@ -17,7 +17,6 @@ var x = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
 
   document.getElementById("dias").innerHTML = days;
   var spanDias = document.createElement('span');
@@ -39,13 +38,14 @@ var x = setInterval(function() {
   spanSegundos.textContent = 'Segundos';
   document.getElementById("segundos").appendChild(spanSegundos);
 
-
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
+
 }, 1000);
+
 
 document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
