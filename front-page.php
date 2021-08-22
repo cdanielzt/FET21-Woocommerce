@@ -197,12 +197,21 @@
                                 <?php
                                     $fields = get_fields();
                                     ?>
-                                    <p class="capitalised"><?php echo $fields['tipo_ponencia'] ?> <span><?php echo $fields['modalidad'] ?></span></p>
+                                    <p class="capitalised"><?php echo $fields['tipo_ponencia'] ?> 
+                                    <?php
+                                    $modalidad = get_field('modalidad');
+                                    if($modalidad == "Presencial"){
+                                        echo ' <span>'.$modalidad.'</span>';
+                                    } else{
+                                        echo ' <span class="bg-purple">'.$modalidad.'</span>';
+                                    }
+                                      ?> 
+                                    </p>
                                     <h2> <a href="<?php the_permalink(); ?>"><?php echo $fields['titulo'] ?></a></h2>
                                     <p><?php the_excerpt(); ?></p>
                                     <span class="time"><?php echo $fields['horario'] ?></span>
                  
-                                    <h3 class="speaker-name">&mdash; <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span
+                                    <h3 class="speaker-name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &mdash; <span
                                             class="position"><?php echo $fields['puesto'] ?></span></h3>
                                 </div><!-- text -->
                             </div><!-- speaker-wrap -->
@@ -256,11 +265,20 @@
                                 <?php
                                     $fields = get_fields();
                                     ?>
+                                    <p class="capitalised"><?php echo $fields['tipo_ponencia'] ?> 
+                                    <?php
+                                    $modalidad = get_field('modalidad');
+                                    if($modalidad == "Presencial"){
+                                        echo ' <span>'.$modalidad.'</span>';
+                                    } else{
+                                        echo ' <span class="bg-purple">'.$modalidad.'</span>';
+                                    }
+                                      ?> </p>
                                     <h2> <a href="<?php the_permalink(); ?>"><?php echo $fields['titulo'] ?></a></h2>
                                     <p><?php the_excerpt(); ?></p>
                                     <span class="time"><?php echo $fields['horario'] ?></span>
                  
-                                    <h3 class="speaker-name">&mdash; <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span
+                                    <h3 class="speaker-name"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &mdash;<span
                                             class="position"><?php echo $fields['puesto'] ?></span></h3>
                                 </div><!-- text -->
                             </div><!-- speaker-wrap -->
