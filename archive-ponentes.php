@@ -20,11 +20,12 @@
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : ?>
                 <?php the_post(); ?>
-                <div class="col-lg-6 speaker speaker-1 d-flex align-items-center mb-5">
+                <?php $fields = get_fields(); ?>
+                <div class="col-lg-6 speaker speaker-1 d-md-flex align-items-center mb-5">
                     <div class="img" style="background-image: url('<?php the_post_thumbnail_url('post_image'); ?>' )"></div>
-                    <div class="text pl-4">
+                    <div class="text pl-4 pt-5 pt-md-0">
                         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <span class="position">Businessman</span>
+                        <p class="position"><?php echo $fields['puesto'] ?></p>
                         <p><?php the_excerpt(); ?></p>
                         <ul class="ftco-social">
                             <li><a href="#"><span class="icon-twitter"></span></a></li>
