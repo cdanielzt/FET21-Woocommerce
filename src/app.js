@@ -5,8 +5,7 @@ var countDownDate = new Date("Nov 5, 2021 09:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
-  var time = document.getElementById("time");
-  if( typeof(time) == 'undefined' && time == null ){
+ 
   // Get today's date and time
   var now = new Date().getTime();
 
@@ -44,7 +43,7 @@ var x = setInterval(function() {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
-}
+
 }, 1000);
 
 

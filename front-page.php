@@ -1,6 +1,6 @@
 <?php get_header() ?>
 <section>
-<div class="hero-wrap parallax-window" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>'/dist/img/fondo.png'">
+<div class="hero-wrap parallax-window" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>/dist/img/fondo.png" data-android-fix="false" data-ios-fix="false">
 
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-start">
@@ -26,7 +26,8 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="request-form ftco-animate">
                     <h2>¡Aparta tu lugar!</h2>
-                    <?php echo do_shortcode('[contact-form-7 id="28" title="Formulario preRegistro"]')?>
+                    <!-- <?php echo do_shortcode('[contact-form-7 id="28" title="Formulario preRegistro"]')?> -->
+                    <?php echo do_shortcode('[fluentform id="3"]')?>
                 </div>
             </div>  <!-- col -->
         </div> <!-- row -->

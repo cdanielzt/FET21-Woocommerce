@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<section class="hero-wrap-2 parallax-window" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>'/dist/img/fondo.png'">
+<section class="hero-wrap-2 parallax-window" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>/dist/img/fondo.png">
     <div class="container">
         <div class="row no-gutter slider-text align-items-end justify-content-start align-content-end">
         <h1><?php post_type_archive_title(); ?></h1>
