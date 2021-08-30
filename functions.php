@@ -201,3 +201,44 @@ function fetFiltroPonencias(){
 		wp_send_json($return);
 	}
 }
+// Add block
+add_action('init','fetRegisterBlock');
+function fetRegisterBlock(){
+	$assets = include_once get_template_directory().'/blocks/build/index.asset.php';
+	wp_register_script(
+		'fet-block',
+		get_template_directory_uri().'/blocks/build/index.js',
+		$assets['dependencies'],
+		$assets['version']
+	);
+
+	register_block_type(
+		'fet/basic',
+		array(
+			'editor_script' => 'fet-block',
+			'attributes'      => array( // Repetimos los atributos del bloque, pero cambiamos los objetos por arrays
+                'content' => array(
+                    'type'    => 'string',
+                    'default' => 'Hello world'
+                ),
+                'mediaURL' => array(
+                    'type'    => 'string'
+                ),
+                'mediaAlt' => array(
+                    'type'    => 'string'
+                )
+
+            ),
+			'render_callback' => 'fetRenderDinamycBlock'
+		)
+		);
+}
+
+function fetRenderDinamycBlock($attributes, $content){
+
+	return (
+        '<h1 class="my-3">'.$attributes['content'].'</h1>
+        <img src="'.$attributes['mediaURL'].'" alt="'.$attributes['mediaAlt'].'" />
+        <hr>'
+    );
+}
