@@ -141,17 +141,6 @@
 
                 <div class="col-md-9 tab-wrap">
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="col mb-5">
-                        <select class="form-control" name="categorias-productos" id="categorias-productos">
-                            <option value="">Todas las categorias</option>
-                            <?php $terms = get_terms('categoria-conferencias', ['hide_empty' => true]) ?>
-                            <?php foreach ($terms as $term): ?>
-                                <option value="<?php echo $term->slug  ?>">
-                                    <?php echo $term->name ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                        </div>
                         
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                             <?php
