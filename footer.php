@@ -4,8 +4,8 @@
       <div class="text-center"><img src="<?php bloginfo('template_directory')?>/dist/img/logo-fet21.png" alt="" width="180" class="mb-3">
           <p class="font-italic text-muted">Foro Emprendedor Tapachula 2021</p>
           <ul class="list-inline mt-4">
-            <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/FOROEMPRENDEDOR21/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/foroemprendedortapachula/" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
         </div>
