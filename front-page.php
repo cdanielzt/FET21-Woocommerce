@@ -89,17 +89,19 @@
 </section>
 
 
-<section class="ftco-section">
+<section class="ftco-section py-0">
     <div class="container">
-        <div class="row">
-        <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"">
-                <div class="img speaker-img" style="background-image: url('<?php the_post_thumbnail_url( 'post_image' ); ?>' )"> </div>   
-            </div>
+        <div class="row no-gutters">
+        <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center img-about" style="background-image: url('<?php the_post_thumbnail_url( 'post_image' ); ?>' )">
+        </div>
             <div class="col-md-7 wrap-about py-md-5 about">
-                <?php if(have_posts()) : while(have_posts()) : the_post();?>
-                <h2><?php the_title();?></h2>
-                <?php the_content(); ?>
-                <?php endwhile; else: endif;?>
+                <div class="mb-5 pt-5 ps-md-5"> 
+                    <?php if(have_posts()) : while(have_posts()) : the_post();?>
+                    <h2><?php the_title();?></h2>
+                    <?php the_content(); ?>
+                    <?php endwhile; else: endif;?>
+                </div>
+                
             </div>
 
         </div>

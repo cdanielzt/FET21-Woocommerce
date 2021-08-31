@@ -11538,6 +11538,11 @@ header .header-inner {
   font-weight: 600;
 }
 
+.img-about {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .fet-agenda {
   position: relative;
   width: 100%;
