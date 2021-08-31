@@ -68,18 +68,18 @@
                     </div>
                     <div class="media-body">
                         <h3 class="heading mb-3">10 Ponentes</h3>
-                        <p>Conoce las historias de los ponentes, emprendedores, empresarios, Conferencistas de gran importancia en el mundo del Emprendimiento.</p>
+                        <p>Conoce las historias de los ponentes, emprendedores, empresarios, directores.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 d-flex align-self-stretch">
                 <div class="media block-6 services d-block">
                     <div class="icon">
-                    <img src="<?php bloginfo('template_directory')?>/images/icons/employee.svg" alt="" width="70">
+                    <img src="<?php bloginfo('template_directory')?>/images/icons/course.svg" alt="" width="70">
                     </div>
                     <div class="media-body">
-                        <h3 class="heading mb-3">12 Ponentes</h3>
-                        <p>Disfruta de la experiencia de conocer las historias de los ponentes, emprendedores, empresarios, Conferencistas.</p>
+                        <h3 class="heading mb-3">Cursos</h3>
+                        <p>Desarrolla nuevas competencias que te ayudarán en tu carrera profesional.</p>
                     </div>
                 </div>
             </div>
@@ -92,20 +92,16 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row">
+        <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"">
+                <div class="img speaker-img" style="background-image: url('<?php the_post_thumbnail_url( 'post_image' ); ?>' )"> </div>   
+            </div>
+            <div class="col-md-7 wrap-about py-md-5 about">
+                <?php if(have_posts()) : while(have_posts()) : the_post();?>
+                <h2><?php the_title();?></h2>
+                <?php the_content(); ?>
+                <?php endwhile; else: endif;?>
+            </div>
 
-        <div class="col-md-7 col-xl-7 about">
-
-            <?php if(have_posts()) : while(have_posts()) : the_post();?>
-
-            <h2><?php the_title();?></h2>
-
-            <?php the_content(); ?>
-
-            <?php endwhile; else: endif;?>
-        </div>
-        <div class="col-md-5 d-flex justify-content-center">
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFOROEMPRENDEDOR21%2F&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        </div>
         </div>
     </div>
 
