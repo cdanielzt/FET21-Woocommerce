@@ -1,48 +1,40 @@
-<?php get_header() ?>
+<?php 
+get_header() ?>
 
-<section class="hero-wrap-2 parallax-window" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>/dist/img/fondo.png">
+<section class="hero-wrap-center parallax-window col-12" data-parallax="scroll" data-image-src="<?php bloginfo('template_directory')?>/dist/img/fondo.png">
     <div class="container">
-        <div class="row no-gutter slider-text align-items-end justify-content-start align-content-end ">
-        <h1><?php the_title(); ?></h1>
-        <div class="breadcrumbs mb-5" typeof="BreadcrumbList" vocab="https://schema.org/">
-            <?php if(function_exists('bcn_display'))
-            {
-                bcn_display();
-            }?>
+        <div class="row no-gutter slider-text align-items-end justify-content-center align-content-end ">
+        <div class="col-md-8">
+            <div class="breadcrumbs mb-5" typeof="BreadcrumbList" vocab="https://schema.org/">
+                <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+                }?>
+                <h1><?php the_title(); ?></h1>
+            </div>
         </div>
         </div>
     </div>
 
 </section>
 
-<section class="content">
+<section class="center-section pt-5 col-12">
 
 <div class="container">
+        <div class="row justify-content-center">
 
-  
-   
-    <div class="row">
-        
-            
-        
-        <div class="col-lg-3">
-            <div class="">
-            <?php get_sidebar(); ?>
-            </div>
+        <div class="col-md-8">
+
+            <?php if(have_posts()) : while(have_posts()) : the_post();?>
+
+            <?php the_content(); ?>
+            <?php get_template_part('template-parts/post','navigation')?>
+            <?php endwhile; else: endif;?>
         </div>
 
-        <div class="col-lg-9 order-md-first">
-
-        <?php if(have_posts()) : while(have_posts()) : the_post();?>
-
-        <?php the_content(); ?>
-
-        <?php endwhile; else: endif;?>
         </div>
-
+    
     </div>
-
-</div>
 
 </section>
 
