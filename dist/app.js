@@ -3162,7 +3162,7 @@ var x = setInterval(function () {
   document.getElementById("horas").appendChild(spanHoras);
   document.getElementById("minutos").innerHTML = minutes;
   var spanMinutos = document.createElement('span');
-  spanMinutos.textContent = 'Horas';
+  spanMinutos.textContent = 'minutos';
   document.getElementById("minutos").appendChild(spanMinutos);
   document.getElementById("segundos").innerHTML = seconds;
   var spanSegundos = document.createElement('span');
