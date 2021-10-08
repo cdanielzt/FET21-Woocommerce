@@ -19,24 +19,5 @@ get_header() ?>
 
 </section>
 
-<section class="center-section pt-5 col-12">
-
-<div class="container">
-        <div class="row justify-content-center">
-
-        <div class="col-md-8">
-
-            <?php if(have_posts()) : while(have_posts()) : the_post();?>
-
-            <?php the_content(); ?>
-            <?php get_template_part('template-parts/post','navigation')?>
-            <?php endwhile; else: endif;?>
-        </div>
-
-        </div>
-    
-    </div>
-
-</section>
 
 <?php get_footer() ?>
